@@ -18,20 +18,20 @@ public class User {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{arroba}")
-    public String obtenerUsuario(@PathParam("arroba") String arroba) {
-        return usuarios.obtenerUsuario(arroba);
+    @Path("/{userAccoount}")
+    public String getUser(@PathParam("userAccoount") String arroba) {
+        return usuarios.getUser(arroba);
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public void crearUsuario(@FormParam("nombre") String nombre, @FormParam("correo") String correo) {
-        usuarios.añadirUsuario(nombre, correo);
+    public void createUser(@FormParam("name") String nombre, @FormParam("email") String correo) {
+        usuarios.addUser(nombre, correo);
     }
 
     @DELETE
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public void eliminarUsuario(@FormParam("nombre") String nombre) {
-        usuarios.eliminarUsuario("@" + nombre);
+    public void delUser(@FormParam("name") String nombre) {
+        usuarios.deleteUser("@" + nombre);
     }
 }

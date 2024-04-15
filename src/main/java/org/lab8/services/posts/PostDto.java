@@ -21,15 +21,15 @@ public class PostDto {
         this.coleccionPost = database.getCollection("posts");
     }
 
-    public void añadirPost(String arroba, String mensaje) {
-        Document nuevoPost = new Document("usuario", arroba)
-                .append("mensaje", mensaje);
+    public void addPost(String arroba, String mensaje) {
+        Document nuevoPost = new Document("user", arroba)
+                .append("message", mensaje);
         coleccionPost.insertOne(nuevoPost);
     }
 
-    public String listarPost() {
+    public String listAllPost() {
         Gson json = new Gson();
-        Bson projection = Projections.fields(Projections.include("usuario", "mensaje"),
+        Bson projection = Projections.fields(Projections.include("user", "message"),
                 Projections.excludeId());
         List<Document> posts = new ArrayList<>();
         coleccionPost.find().projection(projection).into(posts);
@@ -37,18 +37,18 @@ public class PostDto {
         return json.toJson(posts);
     }
 
-    public String obtenerPostsUsuario(String arroba) {
-        Bson projection = Projections.fields(Projections.include("usuario", "mensaje"),
+    public String postsPerUsers(String arroba) {
+        Bson projection = Projections.fields(Projections.include("user", "message"),
                 Projections.excludeId());
         List<Document> postsUsuario = new ArrayList<>();
-        coleccionPost.find(eq("usuario", arroba)).projection(projection).into(postsUsuario);
+        coleccionPost.find(eq("user", arroba)).projection(projection).into(postsUsuario);
         Gson json = new Gson();
 
         return json.toJson(postsUsuario);
     }
 
-    public void eliminarPost(String arroba, String mensaje) {
-        Bson filtro = Filters.and(eq("usuario", arroba), eq("mensaje", mensaje));
+    public void deletePost(String arroba, String mensaje) {
+        Bson filtro = Filters.and(eq("user", arroba), eq("message", mensaje));
         coleccionPost.deleteOne(filtro);
     }
 }

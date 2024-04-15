@@ -12,26 +12,26 @@ public class Post {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{nombre}")
-    public String obtenerPost(@PathParam("nombre") String nombre) {
-        return post.obtenerPostsUsuario("@" + nombre);
+    @Path("/{name}")
+    public String getPost(@PathParam("name") String name) {
+        return post.postsPerUsers("@" + name);
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String obtenerPosts() {
-        return post.listarPost();
+    public String getAllPosts() {
+        return post.listAllPost();
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public void crearPost(@FormParam("arroba") String arroba, @FormParam("mensaje") String mensaje) {
-        post.añadirPost(arroba, mensaje);
+    public void newPost(@FormParam("userAccount") String account, @FormParam("messaje") String message) {
+        post.addPost(account, message);
     }
 
     @DELETE
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public void eliminarPost(@FormParam("arroba") String arroba, @FormParam("mensaje") String mensaje) {
-        post.eliminarPost(arroba, mensaje);
+    public void removePost(@FormParam("userAccount") String account, @FormParam("message") String message) {
+        post.deletePost(account, message);
     }
 }

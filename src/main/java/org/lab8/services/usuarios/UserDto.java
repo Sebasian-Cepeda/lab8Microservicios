@@ -15,24 +15,24 @@ public class UserDto {
     private final MongoCollection<Document> coleccionUsuario;
 
     public UserDto(MongoDatabase database) {
-        this.coleccionUsuario = database.getCollection("usuarios");
+        this.coleccionUsuario = database.getCollection("users");
     }
 
-    public void añadirUsuario(String nombre, String correo) {
-        Document newUser = new Document("nombre", nombre)
+    public void addUser(String nombre, String correo) {
+        Document newUser = new Document("name", nombre)
                 .append("arroba", "@" + nombre.replace(" ", "_"))
-                .append("correo", correo);
+                .append("email", correo);
         coleccionUsuario.insertOne(newUser);
     }
 
-    public void listarUsuarios() {
+    public void listAllUsers() {
         FindIterable<Document> users = coleccionUsuario.find();
         for (Document user : users) {
             System.out.println(user.toJson());
         }
     }
 
-    public String obtenerUsuario(String arroba) {
+    public String getUser(String arroba) {
         Bson projection = Projections.fields(Projections.include("arroba"),
                 Projections.excludeId());
         Document usuario = coleccionUsuario.find(eq("arroba", arroba.replace(" ", "_"))).projection(projection).first();
@@ -44,7 +44,7 @@ public class UserDto {
         }
     }
 
-    public void eliminarUsuario(String arroba) {
+    public void deleteUser(String arroba) {
         coleccionUsuario.deleteOne(eq("arroba", arroba));
     }
 }

@@ -19,22 +19,19 @@ app = (() => {
   }
   
   function msg() {
-    let mensaje = document.getElementById("message").value;
-    let arroba = document.getElementById("userAccount").innerHTML;
+    let message = document.getElementById("message").value, userAccount = document.getElementById("userAccount").innerHTML;
   
-    let urlPost = "/post";
-    let urlHilo = "/thread";
+    let urlPost = "/post", urlHilo = "/thread";
   
     let bodyData = {
-      arroba: arroba,
-      mensaje: mensaje,
+      userAccount: userAccount,
+      message: message,
     };
   
     var formBody = [];
   
     for (var property in bodyData) {
-      var encodedKey = encodeURIComponent(property);
-      var encodedValue = encodeURIComponent(bodyData[property]);
+      var encodedKey = encodeURIComponent(property), encodedValue = encodeURIComponent(bodyData[property]);
       formBody.push(encodedKey + "=" + encodedValue);
     }
   
