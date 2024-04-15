@@ -12,7 +12,7 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/usuario")
+@Path("/user")
 public class User {
     private UserDto usuarios = new UserDto(MongoDB.getDB());
 

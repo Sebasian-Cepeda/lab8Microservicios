@@ -1,10 +1,11 @@
-function enviar() {
-    let nombre = document.getElementById("nombre").value;
+app = (() => {
+  function send() {
+    let nombre = document.getElementById("name").value;
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
-      document.getElementById("arroba").innerHTML = JSON.parse(this.responseText).arroba;
+      document.getElementById("userAccount").innerHTML = JSON.parse(this.responseText).arroba;
     };
-    xhttp.open("GET", "/usuario/" + nombre);
+    xhttp.open("GET", "/user/" + nombre);
     xhttp.send();
   }
   
@@ -13,16 +14,16 @@ function enviar() {
     xhttp.onload = function () {
       document.getElementById("posts").innerHTML = JSON.stringify(JSON.parse(this.responseText).posts);
     };
-    xhttp.open("GET", "/hilo");
+    xhttp.open("GET", "/thread");
     xhttp.send();
   }
   
   function msg() {
-    let mensaje = document.getElementById("mensaje").value;
-    let arroba = document.getElementById("arroba").innerHTML;
+    let mensaje = document.getElementById("message").value;
+    let arroba = document.getElementById("userAccount").innerHTML;
   
     let urlPost = "/post";
-    let urlHilo = "/hilo";
+    let urlHilo = "/thread";
   
     let bodyData = {
       arroba: arroba,
@@ -60,3 +61,12 @@ function enviar() {
     var fragment = window.location.hash.substring(1);
     return fragment.split("&")[0].split("=")[1];
   }
+
+
+  return {
+    send,
+    posts,
+    msg,
+    getAccessTokenFromUrl,
+  }
+})();

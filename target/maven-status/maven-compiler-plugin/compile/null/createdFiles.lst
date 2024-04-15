@@ -1,9 +1,9 @@
-org\lab8\services\hilos\HiloDto.class
 org\lab8\services\posts\Post.class
-org\lab8\services\usuarios\UserDto.class
 org\lab8\config\MongoDB.class
 org\lab8\config\PathConfigResource.class
 org\lab8\services\posts\PostDto.class
+org\lab8\services\hilos\HiloDto.class
+org\lab8\services\usuarios\UserDto.class
 org\lab8\services\security\Security.class
 org\lab8\services\hilos\Hilo.class
 org\lab8\services\usuarios\User.class

@@ -49,7 +49,7 @@ input[type="button"] {
   box-sizing: border-box;
 }
 
-#arroba {
+#userAccount {
   margin-top: 1rem;
 }
 
@@ -95,7 +95,7 @@ input[type="button"] {
   height: 70px;
 }
 
-.arroba {
+.userAccount {
   padding-left: 120px;
   padding-top: 20px;
 }

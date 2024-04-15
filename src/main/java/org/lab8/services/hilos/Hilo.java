@@ -10,7 +10,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/hilo")
+@Path("/thread")
 public class Hilo {
     private HiloDto hilo = new HiloDto(MongoDB.getDB());
 
