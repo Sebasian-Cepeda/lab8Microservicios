@@ -1,10 +1,11 @@
-# lab8Microservicios
+# TALLER 8, MICROSERVICIOS Y ARQUITECTURAS SERVERLESS
 
-# Descripción 
+## DESCRIPCIÓN
 
 El proyecto tiene como objetivo desarrollar una plataforma de microservicios al estilo de Twitter, donde los usuarios puedan crear hilos y publicaciones (posts) de manera sencilla. Este sistema estará diseñado para ser eficiente y escalable, utilizando tecnologías modernas como Quarkus, MongoDB y JWT (JSON Web Tokens).
 
-## Video probando instancia EC2
+## DESPLIGUE EN AWS
+### Video demostrativo
 
 
 ## DESARROLLADO CON
@@ -60,6 +61,9 @@ podemos ver que el usuario ya existe y que el post se crea correctamente
 
 Este repositorio inicialmente es un monolito con servicios que permiten crear hilos para publicar post al estilo twitter, teniendo presente la autenticación de usuarios, para posteriormente cambiar la arquitectura a microservicios con ayuda de AWS.
 
-## AUTOR
-Santiago Forero Yate
-Juan Sebastian Cepeda saray
+## AUTORES
+* **Santiago Forero Yate** - [santiforero1018](https://github.com/santiforero1018)
+* **Juan Sebastian Cepeda Saray** [Sebasian-Cepeda](https://github.com/Sebasian-Cepeda)
+
+## AGRADECIMIENTOS
+* Especial Agradecimiento al profesor [Luis Daniel Benavides Navarro](https://ldbn.is.escuelaing.edu.co/) por brindar el conocimiento necesario en la realización de este trabajo
