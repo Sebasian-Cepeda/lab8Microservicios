@@ -1,7 +1,4 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100vh;
   background: url("../static/fondo.jpg") no-repeat;
@@ -18,88 +15,63 @@ body {
 }
 
 h1 {
-  background-color: red;
-  color: #fff;
-  margin: 0;
-  padding: 1rem;
-  text-align: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align:center;
+  color: red;
 }
 
 .user {
-  width: 25%;
-  margin: 15px;
+  margin-bottom: 16px;
+}
+
+.userAccount {
+  margin-bottom: 32px;
+  color: red;
 }
 
 .post {
-  margin: 15px;
+  margin-bottom: 32px;
 }
 
-label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-  font-size: 20px;
+.listaPost {
+  border-top: 1px solid #ccc;
+  padding-top: 16px;
+  color: red;
 }
 
-input[type="text"],
-input[type="button"] {
-  width: 70%;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  box-sizing: border-box;
+.icon {
+  margin-right: 8px;
+  color: red;
 }
 
-#userAccount {
-  margin-top: 1rem;
+.bi{
+  font-size: 30px;
 }
 
-#posts {
-  margin-top: 1rem;
-}
-
-.submit_button {
-  background-color: #077075;
-  color: #fff;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.submit_button:hover {
-  background-color: #044145;
-}
-
-.bi {
-  max-width: 100%;
-  width: 5rem;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  outline: 2px solid var(--clr);
-  outline-offset: 4px;
-  fill: var(--clr);
-  background-color: #fff;
-}
-
-.formatoUsuario {
+.userPost {
   display: flex;
   align-items: center;
 }
 
-.informacion {
-  margin-left: 20px;
+.submit_button {
+  cursor: pointer;
+  border: none;
+  background-color: #1da1f2;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
 }
 
-.contenedorImagen {
-  height: 70px;
+.submit_button:hover {
+  background-color: #0e71a9;
 }
 
-.userAccount {
-  padding-left: 120px;
-  padding-top: 20px;
-}
-
-.listaPost {
-  padding-left: 15px;
+input[type="text"] {
+  padding: 10px; 
+  border-radius: 10px; 
+  border: 2px solid white; 
+  background-color: transparent; 
+  color: red;
 }
